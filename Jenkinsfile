@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage("Checkout") {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ygminds73/Terraform-Automation.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sujeet179/Terraform-Automation.git']])
             }
         }
     
@@ -16,14 +16,14 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ('terraform plan') 
+                sh ("terraform plan") 
             }
         }
 
         stage (" Action") {
             steps {
                 echo "Terraform action is --> ${action}"
-                sh ('terraform ${action} --auto-approve') 
+                sh ("terraform ${action} --auto-approve") 
            }
         }
     }
