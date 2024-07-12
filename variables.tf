@@ -37,7 +37,7 @@ variable "acl" {
     default     = "private"
 }
 
-}
+
 variable "tags" {
     type        = map
     description = "(Optional) A mapping of tags to assign to the bucket."
