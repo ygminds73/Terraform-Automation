@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Cloning') {
             steps {
-                
+                checkout scmGit(branches: [[name: '*/B1']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shub23101998/Terraform-Automation.git']])
             }
         }
     
