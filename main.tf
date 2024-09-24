@@ -60,3 +60,8 @@ tags= {
     Name = "my_elastic_ip"
   }
 }
+
+resource "aws_Instance" "main" {
+  ami="ami-id-065554535"
+  instance_type= "t2.medium"
+}
