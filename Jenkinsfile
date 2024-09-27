@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MridulMenghare/Terraform-Automation.git']]])
             }
         }
     
@@ -27,4 +27,4 @@ pipeline {
            }
         }
     }
-}
+}   
