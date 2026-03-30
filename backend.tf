@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "young-minds-app-project-terraform-state-latest"
+    bucket         = "tanuj bucket "
     key            = "env/dev/terraform.tfstate"
     region         = "us-east-1"
 
