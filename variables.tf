@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
-    default     =  "jenkins-ap-south-1" 
+    default     =  "jenkins" 
 }
 
 variable "instance_type" { 
