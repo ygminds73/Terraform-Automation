@@ -22,11 +22,17 @@ pipeline {
                 )
             }
         }
+                    userRemoteConfigs: [[url: 'https://github.com/ygminds73/Terraform-Automation.git']]
+                )
+            }
+        }
+
         stage("terraform init") {
             steps {
                 sh("terraform init -reconfigure")
             }
         }
+
         stage("Action") {
             steps {
                 script {
