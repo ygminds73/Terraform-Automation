@@ -3,7 +3,7 @@ pipeline {
     parameters {
         choice(
             name: 'ACTION',
-            choices: ['plan', 'apply'],
+            choices: ['plan', 'apply', 'destroy'],
             description: 'Select the action to perform'
         )
         string(
@@ -18,6 +18,10 @@ pipeline {
                 checkout scmGit(
                     branches: [[name: "*/${params.BRANCH}"]],
                     extensions: [],
+                    userRemoteConfigs: [[url: 'https://github.com/abhisheksahani096/Terraform-Automation.git']]
+                )
+            }
+        }
                     userRemoteConfigs: [[url: 'https://github.com/ygminds73/Terraform-Automation.git']]
                 )
             }
@@ -40,6 +44,10 @@ pipeline {
                         case 'apply':
                             echo 'Executing Apply...'
                             sh "terraform apply --auto-approve"
+                            break
+                        case 'destroy':
+                            echo 'Executing Destroy...'
+                            sh "terraform destroy --auto-approve"
                             break
                         default:
                             error 'Unknown action'
